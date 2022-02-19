@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href='{% static "css/styles.css" %}'>
+    <title>О сайте - Coronavirus web</title>
+</head>
+<body>
+    <header>
+        <img src="{% static 'images/header3.png' %}" alt="Icon" id="logo_img">
+        <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <p id="title">Статистика коронавируса в России</p>
+        <a href="/stats" id="back_link">Назад</a>
+    </header>
+
+    <main>
+        <div class="text_field" id="info">
+            <h1>Информация о сайте</h1>
+            <h2>Назначение</h2>
+            <p>Это сайт для бла-бла-бла</p>
+            <h2>Разрботчик</h2>
+            <p>Этот сайт разработал бла-бла-бла</p>
+            <h2>Чет еще</h2>
+            <p>Бла-бла-бла</p>
+        </div>
+    </main>
+
+    <footer>
+        <p>Разработчик:</p>
+        <form target="_blank" class="social_media_button" method="get" action="https://vk.com/careful_brainless">
+            <button class='dev_link' id="dev_vk"><i class="fa fa-vk"></i></button>
+        </form>
+        <form target="_blank" class="social_media_button" method="get" action="https://github.com/CarefulBrainless">
+            <button class='dev_link' id="dev_github"><i class="fa fa-github"></i></button>
+        </form>
+    </footer>
+</body>
+</html>

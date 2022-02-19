@@ -1,0 +1,43 @@
+:root{
+    --background_color: white;
+    --divs_color: #f1f1f1;
+    -accent_color: #c490ff;
+    --text_color: black;
+    --link_shadow_color: yellow;
+    --visited_link_shadow_color: red;
+    /* Темная тема
+    --background_color: #0a0a0a;
+    --divs_color: #181818;
+    -accent_color: #c490ff;
+    --text_color: #e2e2e2;*/
+}
+
+#sections_div{
+    display: flex;
+    width: 100%;
+    height: auto;
+    background-color: white;
+}
+
+h1{
+    margin-bottom: -18px;
+}
+
+#actual_info_date{
+    font-size: 14px;
+}
+
+.section_link{
+    display: inline-block;
+}
+
+#actual_info_search{
+    border: 1px solid;
+    height: 30px;
+    width: 1025px;
+    margin-bottom: 5px;
+}
+
+#actual_info_table{
+    width: 1025px;
+}

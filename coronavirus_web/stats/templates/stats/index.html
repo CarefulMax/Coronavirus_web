@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href='{% static "css/styles.css" %}'>
+    <link rel="stylesheet" href='{% static "css/stats.css" %}'>
+    <title>Coronavirus web</title>
+</head>
+<body>
+    <header>
+        <img src="{% static 'images/header3.png' %}" alt="Icon" id="logo_img">
+        <p id="title">Статистика коронавируса в России</p>
+    </header>
+
+    <main>
+        <div id="buttons_div">
+            <a class="section_link" href="/report">Сформировать отчет</a>
+            <a class="section_link" href="/about">Информация о сайте</a>
+            <a class="section_link">Еще одна кнопка</a>
+            </form>
+        </div>
+        <div id="actual_info">
+            <h1>Актуальная информация</h1>
+            <p id="actual_info_date">на {{ actual_date }}</p>
+            <input type="text" id="actual_info_search",
+                   placeholder="Поиск по региону...", onkeyup="actual_info_search()">
+            <table id="actual_info_table">
+                <thead>
+                    <tr class="header_row">
+                        <th>Регион</th>
+                        <th>Новых случаев</th>
+                        <th>Госпитализировано</th>
+                        <th>Выздоровело</th>
+                        <th>Умерло</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for region in regional_stats_list %}
+                        <tr class="stats_row">
+                            {% for column in regional_stats_columns %}
+                                <td>{{ region }} {{ column }}</td>
+                            {% endfor %}
+                        </tr>
+                    {% endfor %}
+                </tbody>
+        </table>
+        </div>
+
+    </main>
+
+    <footer>
+        <p>Разработчик:</p>
+        <form target="_blank" class="social_media_button" method="get" action="https://vk.com/careful_brainless">
+            <button class='dev_link' id="dev_vk"><i class="fa fa-vk"></i></button>
+        </form>
+        <form target="_blank" class="social_media_button" method="get" action="https://github.com/CarefulBrainless">
+            <button class='dev_link' id="dev_github"><i class="fa fa-github"></i></button>
+        </form>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href='{% static "css/reports.css" %}'>
+    <link rel="stylesheet" href='{% static "css/styles.css" %}'>
+    <title>Создать отчет - Coronavirus web</title>
+</head>
+<body>
+    <header>
+        <img src="{% static 'images/header3.png' %}" alt="Icon" id="logo_img">
+        <p id="title">Статистика коронавируса в России</p>
+        <a href="/stats" id="back_link">Назад</a>
+    </header>
+
+    <main>
+        <div id="report_creation">
+            <h1>Сформировать отчет:</h1>
+        </div>
+    </main>
+
+    <footer>
+        <p>Разработчик:</p>
+        <form target="_blank" class="social_media_button" method="get" action="https://vk.com/careful_brainless">
+            <button class='dev_link' id="dev_vk"><i class="fa fa-vk"></i></button>
+        </form>
+        <form target="_blank" class="social_media_button" method="get" action="https://github.com/CarefulBrainless">
+            <button class='dev_link' id="dev_github"><i class="fa fa-github"></i></button>
+        </form>
+    </footer>
+</body>
+</html>

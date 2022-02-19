@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+
+:root{
+    --background_color: white;
+    --divs_color: #f1f1f1;
+    -accent_color: #c490ff;
+    --text_color: black;
+    --link_shadow_color: yellow;
+    --visited_link_shadow_color: red;
+    /* Темная тема
+    --background_color: #0a0a0a;
+    --divs_color: #181818;
+    -accent_color: #c490ff;
+    --text_color: #e2e2e2;*/
+}
+
+body {
+	margin: 0px;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+}
+
+header{
+    display: flex;
+	height: 85px;
+	padding: 5px 10px;
+	background-color: var(--divs_color);
+}
+
+body, input{
+	font-family: 'Playfair Display', serif;
+	background-color: var(--background_color);
+	color: var(--text_color);
+}
+
+main{
+	padding: 0px 15px;
+}
+
+footer{
+    display: flex;
+    text-align: center;
+	min-height: 60px;
+	padding-left: 10px;
+	margin-top: auto;
+	background-color: var(--divs_color);
+}
+
+a{
+    color: var(--text_color);
+    border: solid 1px rgb(220, 220, 220);
+    border-radius: 25%;
+    background-color: white;
+    margin-top: 30px;
+    margin-right: 20px;
+    text-decoration: none;
+    padding: 5px;
+}
+
+a:hover{
+    background-color: #333333;
+    color: var(--divs_color);
+}
+
+a:visited{
+    color: var(--text_color);
+}
+
+#back_link{
+    margin-left: auto;
+    text-align: center;
+    height: 22px;
+}
+
+#title{
+    display: flex;
+    margin-top: 25px;
+    margin-left: 10px;
+	font-size: 24px;
+}
+
+#logo_img{
+	float: left;
+	width: 80px;
+	height: 80px;
+}
+
+button{
+    background-color: white;
+    border: solid 1px rgb(220, 220, 220);
+}
+
+.dev_link{
+    margin-top: 10px;
+    margin-left: 10px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+
+.dev_link *{
+    color: rgb(20, 20, 20);
+}
+
+.dev_link:hover{
+    box-shadow: none;
+    cursor: pointer;
+}
+
+#dev_vk:hover{
+    background-color: #0077FF;
+}
+
+#dev_vk:hover *{
+    color: white;
+}
+
+#dev_github:hover{
+    background-color: #333333;
+}
+
+#dev_github:hover *{
+    color: white;
+}
+
+table{
+    border: 1px solid;
+    width: 80%;
+    height: 20%;
+}
+
+thead, tbody { display: block; }
+
+tbody {
+    height: 250px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+td, th{
+    min-width: 200px;
+    max-width: 200px;
+    border-right: 1px solid;
+}
+
+th {
+    background-color: var(--divs_color);
+}
