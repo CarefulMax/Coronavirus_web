@@ -4,5 +4,5 @@ from .views import *
 
 urlpatterns = [
     path('', index),
-    path('', parse),
+    path('download_current', download_current)
 ]

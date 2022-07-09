@@ -125,6 +125,7 @@ button{
 }
 
 table{
+    border-collapse: collapse;
     border: 1px solid;
     width: 80%;
     height: 20%;
@@ -141,7 +142,7 @@ tbody {
 td, th{
     min-width: 200px;
     max-width: 200px;
-    border-right: 1px solid;
+    border-bottom: 1px solid;
 }
 
 th {

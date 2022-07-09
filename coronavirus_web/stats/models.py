@@ -15,14 +15,14 @@ class Regions(models.Model):
 
 
 class RegionalStats(models.Model):
-    date = models.DateField(auto_now_add=True, verbose_name='Дата')  # todo заменить auto_now_add на дату из парса
+    date = models.DateField(verbose_name='Дата')
     region = models.ForeignKey('Regions', on_delete=models.CASCADE, default=-1, verbose_name='id региона')
     new_cases = models.IntegerField(verbose_name='Новые случаи')
     hospitalised = models.IntegerField(verbose_name='Госпитализировано')
     recovered = models.IntegerField(verbose_name='Вылечились')
     died = models.IntegerField(verbose_name='Умерло')
-    vaccinated_first_component_cumulative = models.IntegerField(verbose_name='Вакцинировано первым компонентом')
-    vaccinated_fully_cumulative = models.IntegerField(verbose_name='Вакцинировано полностью')
+    vaccinated_first_component_cumulative = models.IntegerField(verbose_name='Вакцинировано 1 комп.')
+    vaccinated_fully_cumulative = models.IntegerField(verbose_name='Вакцинировано 2 комп.')
     collective_immunity = models.DecimalField(max_digits=3, decimal_places=1, verbose_name='Коллективный иммунитет')
 
     def __str__(self):
@@ -45,7 +45,7 @@ class RegionalStats(models.Model):
 
 
 class Restrictions(models.Model):
-    description = models.TextField()
+    description = models.TextField(unique=True)
 
     def __str__(self):
         return self.description
@@ -70,13 +70,19 @@ class RegionalRestrictions(models.Model):
         verbose_name_plural = 'Региональные ограничения'
         db_table = 'regional_restrictions'
         ordering = ['-date', 'region']
-        unique_together = ['date', 'region']
+        unique_together = ['date', 'region', 'restriction']
 
 
-# todo Возможно не нужна из-за unique together?
 class LastParsed(models.Model):
     parse_datetime = models.DateTimeField(auto_now=True, verbose_name='Время последней проверки')
-    parsed_info_datetime = models.DateTimeField(verbose_name='Время последних взятых данных')
+    parsed_info_datetime = models.DateField(verbose_name='Время последних взятых данных')
+    parse_success = models.BooleanField(verbose_name='Парсинг прошел успешно', default=False)
+
+    def __str__(self):
+        if self.parse_success:
+            return f'Последний парсинг (успешный) - {self.parse_datetime}, последние данные - {self.parsed_info_datetime}'
+        else:
+            return f'Последний парсинг не прошел в {self.parse_datetime}, последние данные - {self.parsed_info_datetime}'
 
     class Meta:
         verbose_name = 'Последний парсинг'

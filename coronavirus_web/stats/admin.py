@@ -12,7 +12,7 @@ class RegionsAdmin(admin.ModelAdmin):
 
 
 class RegionalStatsAdmin(admin.ModelAdmin):
-    list_display = ('id', 'date', 'region', 'new_cases', 'collective_immunity',)
+    list_display = ('id', 'date', 'region', 'new_cases', 'hospitalised', 'recovered', 'died', 'vaccinated_fully_cumulative', 'collective_immunity',)
     search_fields = ('id', 'date', 'region',)
 
 
@@ -28,7 +28,7 @@ class RestrictionsAdmin(admin.ModelAdmin):
 
 class LastParsedAdmin(admin.ModelAdmin):
     change_list_template = "admin/parsed_change_list.html"
-    list_display = ('parse_datetime', 'parsed_info_datetime',)
+    list_display = ('parse_datetime', 'parsed_info_datetime', 'parse_success')
 
 
 admin.site.register(Regions, RegionsAdmin)

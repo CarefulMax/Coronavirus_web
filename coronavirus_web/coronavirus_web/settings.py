@@ -38,12 +38,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'news.apps.NewsConfig',
     'stats.apps.StatsConfig',
-    'api.apps.ApiConfig',
     'index_redirect.apps.IndexRedirectConfig',
     'reports.apps.ReportsConfig',
     'site_info.apps.SiteInfoConfig',
+    'db_updater.apps.DbUpdaterConfig',
+    'regions.apps.RegionsConfig'
 ]
 
 MIDDLEWARE = [
@@ -80,10 +80,24 @@ WSGI_APPLICATION = 'coronavirus_web.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
-DATABASES = {
+
+# Тестовая SQLite база
+'''DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'NAME': BASE_DIR / 'db backup.sqlite3',
+    }
+}'''
+
+# Используемая PostgreSQL база
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'coviddb',
+        'USER': 'coronaweb',
+        'PASSWORD': 'coronawebpass',
+        'HOST': 'localhost',
+        'PORT': '5433'
     }
 }
 
@@ -137,3 +151,10 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 STATICFILES_DIRS = [
     BASE_DIR / "static",
 ]
+
+# hpevhotmbdokmbej
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_USE_TLS = True
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'coronavirusweb2022@gmail.com'
+EMAIL_HOST_PASSWORD = 'hpevhotmbdokmbej'

@@ -41,3 +41,14 @@ h1{
 #actual_info_table{
     width: 1025px;
 }
+
+#download{
+    color: var(--text_color);
+    border: solid 1px rgb(220, 220, 220);
+    border-radius: 0%;
+    background-color: white;
+    margin-top: 50px;
+    margin-right: 20px;
+    text-decoration: none;
+    padding: 5px;
+}

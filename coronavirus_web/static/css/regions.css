@@ -1,0 +1,32 @@
+:root{
+    --background_color: white;
+    --divs_color: #f1f1f1;
+    -accent_color: #c490ff;
+    --text_color: black;
+    /* Темная тема
+    --background_color: #0a0a0a;
+    --divs_color: #181818;
+    -accent_color: #c490ff;
+    --text_color: #e2e2e2;*/
+}
+
+#finderForm, #info{
+    width: 80vw;
+    background-color: rgb(230, 230, 230);
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 40px;
+}
+
+#finderForm{
+    height: 125px;
+}
+
+#info{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+div.input_div{
+    height: 50px;
+}

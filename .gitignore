@@ -4,3 +4,4 @@ coronavirus_web/useful.txt
 coronavirus_web/temp_parser.py
 coronavirus_web/temp_parsed_data.txt
 coronavirus_web/temp_parser_from_file.py
+/coronavirus_web/sql.txt

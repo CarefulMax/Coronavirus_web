@@ -18,7 +18,7 @@ from django.contrib import admin
 from django.urls import path, include
 
 from coronavirus_web import settings
-from stats.views import parse
+from db_updater.views import parse
 from index_redirect.views import index_to_stats_redirect
 
 urlpatterns = [
@@ -26,10 +26,9 @@ urlpatterns = [
     path('admin/stats/lastparsed/parse/', parse),
     path('admin/', admin.site.urls),
     path('stats/', include('stats.urls')),
-    path('news/', include('news.urls')),
-    path('api/', include('api.urls')),
     path('report/', include('reports.urls')),
-    path('about/', include('site_info.urls'))
+    path('about/', include('site_info.urls')),
+    path('regions/', include('regions.urls'))
 ]
 
 if settings.DEBUG:

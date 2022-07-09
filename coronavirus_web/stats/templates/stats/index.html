@@ -18,15 +18,15 @@
     <main>
         <div id="buttons_div">
             <a class="section_link" href="/report">Сформировать отчет</a>
+            <a class="section_link" href="/regions">Региональная статистика</a>
             <a class="section_link" href="/about">Информация о сайте</a>
-            <a class="section_link">Еще одна кнопка</a>
             </form>
         </div>
         <div id="actual_info">
             <h1>Актуальная информация</h1>
             <p id="actual_info_date">на {{ actual_date }}</p>
-            <input type="text" id="actual_info_search",
-                   placeholder="Поиск по региону...", onkeyup="actual_info_search()">
+            <!--<input type="text" id="actual_info_search",
+                   placeholder="Поиск по региону...", onkeyup="actual_info_search()">-->
             <table id="actual_info_table">
                 <thead>
                     <tr class="header_row">
@@ -40,14 +40,18 @@
                 <tbody>
                     {% for region in regional_stats_list %}
                         <tr class="stats_row">
-                            {% for column in regional_stats_columns %}
-                                <td>{{ region }} {{ column }}</td>
-                            {% endfor %}
+                            <td>{{ region.region }}</td>
+                            <td>{{ region.new_cases }}</td>
+                            <td>{{ region.hospitalised }}</td>
+                            <td>{{ region.recovered }}</td>
+                            <td>{{ region.died }}</td>
                         </tr>
                     {% endfor %}
                 </tbody>
         </table>
         </div>
+        <br>
+        <a id="download" href="download_current">Скачать данные</a>
 
     </main>
 
